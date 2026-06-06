@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Tetris</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-wrapper">
+        <h1 class="game-title">TETRIS</h1>
+        
+        <div class="game-container">
+            <!-- Left Panel: Score and Hold -->
+            <div class="panel left-panel">
+                <div class="info-box box-score">
+                    <h2>SCORE</h2>
+                    <p id="score">0</p>
+                </div>
+                <div class="info-box box-level">
+                    <h2>LEVEL</h2>
+                    <p id="level">1</p>
+                </div>
+                <div class="info-box box-lines">
+                    <h2>LINES</h2>
+                    <p id="lines">0</p>
+                </div>
+                <div class="visual-box">
+                    <h2>HOLD</h2>
+                    <canvas id="hold-board" width="120" height="120"></canvas>
+                </div>
+            </div>
+
+            <!-- Center Panel: The Game Board -->
+            <div class="main-board-container">
+                <canvas id="game-board" width="300" height="600"></canvas>
+                <div id="game-over-screen" class="overlay hidden">
+                    <h2 class="game-over-title">GAME OVER</h2>
+                    <button id="restart-btn" class="glow-on-hover">RESTART</button>
+                </div>
+                <div id="start-screen" class="overlay">
+                    <button id="start-btn" class="glow-on-hover">START GAME</button>
+                </div>
+            </div>
+
+            <!-- Right Panel: Next Pieces -->
+            <div class="panel right-panel">
+                <div class="visual-box">
+                    <h2>NEXT</h2>
+                    <canvas id="next-board" width="120" height="360"></canvas>
+                </div>
+                <div class="controls-guide">
+                    <h3>CONTROLS</h3>
+                    <ul>
+                        <li><span class="key">&larr;&rarr;</span> Move</li>
+                        <li><span class="key">&darr;</span> Soft Drop</li>
+                        <li><span class="key">Space</span> Hard Drop</li>
+                        <li><span class="key">&uarr; / Z / X</span> Rotate</li>
+                        <li><span class="key">C / Shift</span> Hold</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
